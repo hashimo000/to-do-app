@@ -3,9 +3,9 @@ import "./index.css";
 
 export const App =()=>{
   const [todoText,setTodoText] =useState("");
-  const [incompleteTodos, setIncompleteTodos]=useState(["aaa","iii"]);
+  const [incompleteTodos, setIncompleteTodos]=useState([]);
 
-  const[completeTodos,setCompleteTodos]=useState(["uuu"]);
+  const[completeTodos,setCompleteTodos]=useState([]);
 
   const onChangeTodoText =(event)=> setTodoText(event.target.value)
 
