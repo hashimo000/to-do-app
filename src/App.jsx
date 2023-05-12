@@ -4,11 +4,16 @@ import React, { useState } from "react";
 export const App=()=> {
   const [todos, setTodos] = useState([]);
   const [todoInput, setTodoInput] = useState("");
-  const [dueDateInput, setDueDateInput] = useState("");
+  const [dueDateInput, setDueDateInput] = useState("期限なし");
+  
   const AddTodo = () => {
     if (todoInput !== "") {
-      setTodos([...todos, { task: todoInput,  dueDate:dueDateInput}]);
+      if (dueDateInput!==""){
+        setTodos([...todos,{task:todoInput,dueDate:dueDateInput}])
+      }
+      else setTodos([...todos, { task: todoInput,  dueDate:dueDateInput}]);
       setTodoInput("");
+      
       setDueDateInput("");
       
     }
