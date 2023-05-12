@@ -6,16 +6,19 @@ import { CompleteTodos } from "./components/CompleteTodos";
 export const App =()=>{
   const [todoText,setTodoText] =useState("");
   const [incompleteTodos, setIncompleteTodos]=useState([]);
-
   const[completeTodos,setCompleteTodos]=useState([]);
+  const [dueDateInput, setDueDateInput]= useState("");
+
+
 
   const onChangeTodoText =(event)=> setTodoText(event.target.value)
 
   const onClickAdd=()=>{
     if (todoText==="")return;
-    const newTodos=[...incompleteTodos,todoText];
+    const newTodos=[...incompleteTodos,{task:todoText,dueDate:dueDateInput}];
     setIncompleteTodos(newTodos)
-    setTodoText("")
+    setTodoText("");
+    setDueDateInput("");
 
   }
   const onClickDelete=(index)=>{
