@@ -5,7 +5,21 @@ export const App=()=> {
   const [todos, setTodos] = useState([]);
   const [todoInput, setTodoInput] = useState("");
   const [dueDateInput, setDueDateInput] = useState("期限なし");
+  const[sortBy,setSortBY] =useState("dueDate");
   
+  const sortAraay=(array,sortBy)=>{
+    return array.sort((a,b)=>{
+      if(a[sortBy]<b[sortBy]){
+        return -1;
+      };
+      if (a[sortBy]>b[sortBy])
+      return 1;
+      else
+      return 0;
+      
+    })
+  }
+
   const AddTodo = () => {
     if (todoInput !== "") {
       let dueDate = dueDateInput !== "" ? dueDateInput : "期限なし";
@@ -20,12 +34,17 @@ export const App=()=> {
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
+  const sortTodos = () => {
+    const sortedTodos = sortAraay([...todos], sortBy);
+    setTodos(sortedTodos);
+  };
 
- 
 
   return (
     <div className="App">
       <h1>TODOアプリ</h1>
+      
+      <button onClick={sortTodos}>ソートする</button>
       <input
         type="text"
         placeholder="タスクを入力してください"

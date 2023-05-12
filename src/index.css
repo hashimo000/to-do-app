@@ -7,6 +7,8 @@ input {
   border: none;
   padding: 6px 16px;
   outline: none;
+  background-color: #d9dc04;
+  
 }
 
 button {
@@ -19,38 +21,22 @@ button:hover {
   background-color: #ff7fff;
   color: #fff;
   cursor: pointer;
+
 }
 
 li {
   margin-right: 8px;
 }
+h1{
+  background-color: aqua;
+  border: none;
+  outline: none;
 
-.input-area {
-  background-color: #c1ffff;
-  width: 400px;
-  height: 30px;
-  border-radius: 8px;
-  padding: 8px;
-  margin: 8px;
-}
+};
 
-.incomplete-area {
-  background-color: #c6ffe2;
-  width: 400px;
-  min-height: 200px;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 8px;
-}
 
-.complete-area {
-  background-color: #ffffe0;
-  width: 400px;
-  min-height: 200px;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 8px;
-}
+
+
 
 .title {
   text-align: center;
