@@ -7,7 +7,7 @@ export const App=()=> {
   const [dueDateInput, setDueDateInput] = useState("");
   const AddTodo = () => {
     if (todoInput !== "") {
-      setTodos([...todos, { task: todoInput,  dueDate:dueDateInput}]);
+      setTodos([...todos, { task: todoInput, }]);
       setTodoInput("");
       setDueDateInput("");
       
