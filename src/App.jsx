@@ -5,13 +5,18 @@ export const App=()=> {
   const [todos, setTodos] = useState([]);
   const [todoInput, setTodoInput] = useState("");
   const [dueDateInput, setDueDateInput] = useState("");
-  const handleAddTodo = () => {
+  const AddTodo = () => {
     if (todoInput !== "") {
-      setTodos([...todos, { task: todoInput,  }]);
+      setTodos([...todos, { task: todoInput,  dueDate:dueDateInput}]);
       setTodoInput("");
       setDueDateInput("");
       
     }
+  };
+  const DeleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
  
@@ -31,8 +36,15 @@ export const App=()=> {
         value={dueDateInput}
         onChange={(a) => setDueDateInput(a.target.value)}
       />
-       <button onClick={handleAddTodo}>追加</button>
-      
+       <button onClick={AddTodo}>追加</button>
+       <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {todo.task} - 期限: {todo.dueDate}
+            <button onClick={() => DeleteTodo(index)}>削除</button>
+          </li>
+        ))}
+      </ul>
       
     </div>
   );
