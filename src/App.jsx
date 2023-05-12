@@ -8,13 +8,10 @@ export const App=()=> {
   
   const AddTodo = () => {
     if (todoInput !== "") {
-      if (dueDateInput!==""){
-        setTodos([...todos,{task:todoInput,dueDate:dueDateInput}])
-      }
-      else setTodos([...todos, { task: todoInput,  dueDate:dueDateInput}]);
-      setTodoInput("");
-      
-      setDueDateInput("");
+      let dueDate = dueDateInput !== "" ? dueDateInput : "期限なし";
+    setTodos([...todos, { task: todoInput,  dueDate }]);
+    setTodoInput("");
+    setDueDateInput("");
       
     }
   };
