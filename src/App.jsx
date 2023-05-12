@@ -1,53 +1,34 @@
-import React ,{useState}from "react";
-import { InputTodo } from "./components/InputTodo";
-import "./index.css";
-import { IncompleteTodos } from "./components/IncompleteTodos";
-import { CompleteTodos } from "./components/CompleteTodos";
-export const App =()=>{
-  const [todoText,setTodoText] =useState("");
-  const [incompleteTodos, setIncompleteTodos]=useState([]);
-  const[completeTodos,setCompleteTodos]=useState([]);
-  const [dueDateInput, setDueDateInput]= useState("");
 
+import React, { useState } from "react";
 
-
-  const onChangeTodoText =(event)=> setTodoText(event.target.value)
-
-  const onClickAdd=()=>{
-    if (todoText==="")return;
-    const newTodos=[...incompleteTodos,{task:todoText,dueDate:dueDateInput}];
-    setIncompleteTodos(newTodos)
-    setTodoText("");
-    setDueDateInput("");
-
-  }
-  const onClickDelete=(index)=>{
-    const newTodos=[...incompleteTodos];
-    newTodos.splice(index,1);
-    setIncompleteTodos(newTodos);
-
+export const App=()=> {
+  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState("");
+ 
+  const handleAddTodo = () => {
+    if (todoInput !== "") {
+      setTodos([...todos, { task: todoInput,  }]);
+      setTodoInput("");
+      
+    }
   };
-  const onClickComplete=(index)=>{
-    const newIncompleteTodos=[...incompleteTodos];
-    newIncompleteTodos.splice(index,1);
 
-    const newCompleteTodos=[...completeTodos,incompleteTodos[index]];
-    setIncompleteTodos(newIncompleteTodos);
-    setCompleteTodos(newCompleteTodos);
-  };
-  const onClickBack =(index)=>{
-    const newCompleteTodos=[...completeTodos];
-    newCompleteTodos.splice(index,1);
-  
-    const newIncompleteTodos = [...incompleteTodos,completeTodos[index]];
-    setCompleteTodos(newCompleteTodos);
-    setIncompleteTodos(newIncompleteTodos);
-};
+ 
 
   return (
-  <>
-   <InputTodo todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd}/>
-   <IncompleteTodos todos={incompleteTodos} onClickComplete={onClickComplete} onClickDelete={onClickDelete}/>
-   <CompleteTodos todos={completeTodos} onClickBack={onClickBack}/>
-  </>
-)};
+    <div className="App">
+      <h1>TODOアプリ</h1>
+      <input
+        type="text"
+        placeholder="タスクを入力してください"
+        value={todoInput}
+        onChange={(e) => setTodoInput(e.target.value)}
+      />
+       <button onClick={handleAddTodo}>追加</button>
+      
+      
+    </div>
+  );
+}
+
+export default App;
