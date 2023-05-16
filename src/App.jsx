@@ -47,7 +47,7 @@ export const App=()=> {
     <div className="App">
       <header>TODOアプリ</header>
       
-      <Button variant="outline-primary" onClick={sortTodos}>並び替え</Button>
+      <Button variant="outline-primary" onClick={sortTodos}>整理</Button>
       <input
         type="text"
         placeholder="タスクを入力してください"
