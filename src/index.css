@@ -1,7 +1,13 @@
 body {
   font-family: sans-serif;
 }
-
+header{
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  background-color:rgb(10, 7, 7) ;
+  color:white ;
+}
 input {
   border-radius: 16px;
   border: none;

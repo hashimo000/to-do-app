@@ -1,5 +1,8 @@
-
+import "./index.css";
 import React, { useState } from "react";
+import Button from 'react-bootstrap/Button';
+
+
 
 export const App=()=> {
   const [todos, setTodos] = useState([]);
@@ -42,9 +45,9 @@ export const App=()=> {
 
   return (
     <div className="App">
-      <h1>TODOアプリ</h1>
+      <header>TODOアプリ</header>
       
-      <button onClick={sortTodos}>並び替え</button>
+      <Button variant="outline-primary" onClick={sortTodos}>並び替え</Button>
       <input
         type="text"
         placeholder="タスクを入力してください"
@@ -57,7 +60,7 @@ export const App=()=> {
         value={dueDateInput}
         onChange={(a) => setDueDateInput(a.target.value)}
       />
-       <button onClick={AddTodo}>追加</button>
+       <Button variant="outline-primary" onClick={AddTodo}>追加</Button>{""}
        <ul>
         {todos.map((todo, index) => (
           <li key={index}>
