@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   
+  
 }
 header{
   font-size: large;
@@ -41,6 +42,7 @@ ul {
 
 div{
   text-align: center;
+  
 }
 
 
@@ -58,4 +60,8 @@ div{
   display: flex;
   align-items: center;
   padding-bottom: 4px;
+}
+
+.All{
+  background-color: #1ef8b3;
 }
