@@ -65,7 +65,7 @@ export const App=()=> {
         {todos.map((todo, index) => (
           <li key={index}>
             {todo.task} - 期限: {todo.dueDate}
-            <button onClick={() => DeleteTodo(index)}>削除</button>
+            <Button variant="outline-warning" onClick={() => DeleteTodo(index)}>削除</Button>
           </li>
         ))}
       </ul>

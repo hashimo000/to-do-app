@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  
 }
 header{
   font-size: large;
@@ -15,12 +16,14 @@ input {
   outline: none;
   background-color: #d9dc04;
   
+  
 }
 
 button {
   border-radius: 16px;
   border: none;
   padding: 4px 16px;
+  text-align: center;
 }
 
 button:hover {
@@ -30,15 +33,15 @@ button:hover {
 
 }
 
-li {
+ul {
   margin-right: 8px;
+  text-align: center;
+  list-style: none;
 }
-h1{
-  background-color: aqua;
-  border: none;
-  outline: none;
 
-};
+div{
+  text-align: center;
+}
 
 
 
