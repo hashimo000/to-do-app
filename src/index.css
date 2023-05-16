@@ -7,7 +7,7 @@ header{
   font-size: large;
   display: flex;
   justify-content: center;
-  background-color:rgb(10, 7, 7) ;
+  background-color:rgb(45, 14, 158) ;
   color:white ;
 }
 input {
@@ -38,6 +38,7 @@ ul {
   margin-right: 8px;
   text-align: center;
   list-style: none;
+  color: #fff;
 }
 
 div{
